@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="AppApiMc.PageConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppApiMc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  
+    <Grid>
+
+        <ScrollViewer x:ConnectionId='2' FontSize="30* " Margin="10"                                       >
+            <StackPanel DataContext="{Binding Config}">
+                <TextBlock Text="Configuration" HorizontalAlignment="Center" FontSize="40*"/>
+                <TextBlock Text="Path to json"  />
+                <TextBox Text="{Binding PathToJson, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <TextBlock Text="Path to load" />
+                <TextBox Text="{Binding PathToLoad, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <TextBlock Text="Proxy" />
+                <TextBox Text="{Binding Proxy, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <TextBlock Text="Login" />
+                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <TextBlock Text="Password" />
+                <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button x:ConnectionId='3' x:Name="Button" Width="228" Height="67" Background="Azure"                Content="Применить" FontSize="30" Margin="15,435,0,0" VerticalAlignment="Top"  />
+    </Grid>
+</Page>
+
