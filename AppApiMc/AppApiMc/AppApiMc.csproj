@@ -121,6 +121,12 @@
     </Compile>
     <Compile Include="ConfigViewModel.cs" />
     <Compile Include="itemConfig.cs" />
+    <Compile Include="JsonClasses\Catalog.cs" />
+    <Compile Include="JsonClasses\CityInfo.cs" />
+    <Compile Include="JsonClasses\JsonInfo.cs" />
+    <Compile Include="JsonClasses\PricesInRestoran.cs" />
+    <Compile Include="JsonClasses\Products.cs" />
+    <Compile Include="JsonClasses\ReustoranInfo.cs" />
     <Compile Include="PageConfig.xaml.cs">
       <DependentUpon>PageConfig.xaml</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NLog.Extensions.Logging">
+      <Version>1.7.2</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
       <Version>5.0.2</Version>
