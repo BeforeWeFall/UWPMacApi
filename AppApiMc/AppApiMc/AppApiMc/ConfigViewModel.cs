@@ -37,11 +37,11 @@ namespace AppApiMc
             workWithSettings.SaveSettings(config);
         }
 
-        public ConfigViewModel()
+        public  ConfigViewModel()
         {
             workWithSettings = new WorkWithSettings();
 
-            Config = workWithSettings.LoadSettings();
+            Config = workWithSettings.LoadSettings().Result;
         }
         public bool CheckJson()
         {

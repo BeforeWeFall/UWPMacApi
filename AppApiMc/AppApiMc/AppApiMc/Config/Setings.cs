@@ -61,6 +61,7 @@ namespace AppApiMc.Config
                 OnPropertyChanged("Login");
             }
         }
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = "")

@@ -10,11 +10,12 @@
 
     <Grid>
 
-        
+
         <ScrollViewer FontSize="30* " Margin="10" ViewChanged="ScrollViewer_ViewChanged">
             <StackPanel DataContext="{Binding Config}">
                 <TextBlock Text="Configuration" HorizontalAlignment="Center" FontSize="40*"/>
                 <TextBlock Text="Path to json"  />
+
                 <TextBox x:Name="PathJson" Text="{Binding PathToJson, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
                 <TextBlock Text="Path to load" />
                 <TextBox x:Name="PathLoad" Text="{Binding PathToLoad, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
@@ -30,5 +31,6 @@
 
         <Button x:Name="Button" Width="228" Height="67" Background="Azure" Click="Append" Content="Применить" FontSize="30" Margin="15,435,0,0" VerticalAlignment="Top" />
         <Button x:Name="Back" Width="228" Height="67" Background="Azure"  Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="278,435,0,0" Click="Back_Click"/>
+        <Button x:Name="Back2" Width="228" Height="67" Background="Azure"  Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="567,435,0,0" Click="Back2_Click"/>
     </Grid>
 </Page>

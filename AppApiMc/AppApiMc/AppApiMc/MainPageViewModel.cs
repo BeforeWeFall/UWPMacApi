@@ -35,7 +35,7 @@ namespace AppApiMc
         {
             WorkWithSettings workWithSettings = new WorkWithSettings();
 
-            Setings = workWithSettings.LoadSettings();
+            Setings = workWithSettings.LoadSettings().Result;
         }
 
     }

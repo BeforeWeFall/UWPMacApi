@@ -10,14 +10,15 @@
 
     <Grid>
 
-        
+
         <ScrollViewer x:ConnectionId='2' FontSize="30* " Margin="10"                                       >
             <StackPanel DataContext="{Binding Config}">
                 <TextBlock Text="Configuration" HorizontalAlignment="Center" FontSize="40*"/>
                 <TextBlock Text="Path to json"  />
-                <TextBox x:ConnectionId='5' x:Name="PathJson" Text="{Binding PathToJson, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+
+                <TextBox x:ConnectionId='6' x:Name="PathJson" Text="{Binding PathToJson, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
                 <TextBlock Text="Path to load" />
-                <TextBox x:ConnectionId='6' x:Name="PathLoad" Text="{Binding PathToLoad, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <TextBox x:ConnectionId='7' x:Name="PathLoad" Text="{Binding PathToLoad, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
                 <TextBlock Text="Proxy" />
                 <TextBox Text="{Binding Proxy, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
                 <TextBlock Text="Login" />
@@ -30,6 +31,7 @@
 
         <Button x:ConnectionId='3' x:Name="Button" Width="228" Height="67" Background="Azure"                Content="Применить" FontSize="30" Margin="15,435,0,0" VerticalAlignment="Top" />
         <Button x:ConnectionId='4' x:Name="Back" Width="228" Height="67" Background="Azure"  Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="278,435,0,0"                   />
+        <Button x:ConnectionId='5' x:Name="Back2" Width="228" Height="67" Background="Azure"  Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="567,435,0,0"                    />
     </Grid>
 </Page>
 
