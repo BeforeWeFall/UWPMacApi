@@ -88,8 +88,8 @@
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\PageConfig.xbf">
-      <PackagePath>PageConfig.xbf</PackagePath>
+    <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\PageConfig\PageConfig.xbf">
+      <PackagePath>PageConfig\PageConfig.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>

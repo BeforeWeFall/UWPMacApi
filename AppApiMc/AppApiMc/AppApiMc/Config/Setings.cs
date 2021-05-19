@@ -13,7 +13,7 @@ namespace AppApiMc.Config
     class Setings : INotifyPropertyChanged
     {
 
-        private string pathToJson, pathToLoad, proxy, login, password;
+        private string pathToJson, pathToLoad, proxy, login, password, pathToJsonid, pathToLoadId;
 
 
         public string PathToJson
@@ -23,6 +23,26 @@ namespace AppApiMc.Config
             {
                 pathToJson = value;
                 OnPropertyChanged("PathToJson");
+            }
+        }
+
+        public string PathToJsonId
+        {
+            get => pathToJsonid;
+            set
+            {
+                pathToJsonid = value;
+                OnPropertyChanged("PathToJsonId");
+            }
+        }
+
+        public string PathToLoadId
+        {
+            get => pathToLoadId;
+            set
+            {
+                pathToLoadId = value;
+                OnPropertyChanged("PathToLoadId");
             }
         }
         public string PathToLoad
@@ -69,24 +89,5 @@ namespace AppApiMc.Config
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
-        public bool CheckPathToJson()
-        {
-            pathToJson = Regex.Replace(pathToJson.Trim(), @"^[^a-zA-Z0-9]*", "");
-            bool t = File.Exists(PathToJson);
-            return t;
-        }
-        public bool CheckPathDownload()
-        {
-            if (!Directory.Exists(PathToLoad))
-                try
-                {
-                    Directory.CreateDirectory(pathToLoad);
-                }
-                catch
-                {
-                    return false;
-                }
-            return true;
-        }
     }
 }

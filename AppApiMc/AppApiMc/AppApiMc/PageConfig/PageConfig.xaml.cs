@@ -62,29 +62,49 @@ namespace AppApiMc
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(MainPage));
         }
 
-        private async void Back2_Click(object sender, RoutedEventArgs e)
+        private async void File_Click(object sender, RoutedEventArgs e)
         {
             //FileOpenPicker
             
-            FolderPicker folderPicker = new FolderPicker();
+            FileOpenPicker filePicker = new FileOpenPicker();
             
+            filePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            filePicker.FileTypeFilter.Add(".json");
+
+            StorageFile file = await filePicker.PickSingleFileAsync();
+            
+            if (file != null)
+            {
+
+                viewModel.UpdatePathToJson(file);
+                
+                ////  do Things On Folder
+                //string name = "myTitle.txt";
+                //await folder.CreateFileAsync(name, CreationCollisionOption.GenerateUniqueName); ЧЕРЕЗ ЭТ ХУЙНЮ ВЫБРАТЬ ПАПКУ КУДА СОХРАНЯЕМ АХУЕТЬ ПИЗДЕЦ БЛЯТЬ ПОИГРАТЬСЯ ПОТОМ С СОХРАНЕНИЕ ФАЙЛА ПИСОС
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("you selected nothing");
+                await dialog.ShowAsync();
+            }
+        }
+        private async void Folder_Click(object sender, RoutedEventArgs e)
+        {
+            //FileOpenPicker
+
+            FolderPicker folderPicker = new FolderPicker();
+
             folderPicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             folderPicker.FileTypeFilter.Add("*");
 
             StorageFolder folder = await folderPicker.PickSingleFolderAsync();
-            
+
             if (folder != null)
             {
-                
-                viewModel.Config.PathToLoad = StorageApplicationPermissions.FutureAccessList.Add(folder);
-                PathLoad.Text = folder.Path;
-               
-                ////  do Things On Folder
-                //string name = "myTitle.txt";
-                //await folder.CreateFileAsync(name, CreationCollisionOption.GenerateUniqueName); ЧЕРЕЗ ЭТ ХУЙНЮ ВЫБРАТЬ ПАПКУ КУДА СОХРАНЯЕМ АХУЕТЬ ПИЗДЕЦ БЛЯТЬ ПОИГРАТЬСЯ ПОТОМ С СОХРАНЕНИЕ ФАЙЛА ПИСОС
+                viewModel.UpdatePathToLoad(folder);
             }
             else
             {

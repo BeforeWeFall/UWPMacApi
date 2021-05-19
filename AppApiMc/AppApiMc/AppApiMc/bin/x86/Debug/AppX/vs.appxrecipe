@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-13T00:06:24.346</Modified>
+      <Modified>2021-05-18T22:15:07.228</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\AppApiMc.exe">
       <PackagePath>entrypoint\AppApiMc.exe</PackagePath>
-      <Modified>2021-05-13T00:06:23.620</Modified>
+      <Modified>2021-05-18T22:15:05.908</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ULBelykh\.nuget\packages\microsoft.bcl.asyncinterfaces\5.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -64,7 +64,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\Config\Setings.json">
       <PackagePath>Config\Setings.json</PackagePath>
-      <Modified>2021-04-21T22:34:16.946</Modified>
+      <Modified>2021-05-13T23:27:25.641</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -106,19 +106,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\AppApiMc.xr.xml">
       <PackagePath>AppApiMc.xr.xml</PackagePath>
-      <Modified>2021-05-10T22:22:53.811</Modified>
+      <Modified>2021-05-18T22:15:05.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-13T00:06:23.358</Modified>
+      <Modified>2021-05-18T22:15:05.502</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-05-13T00:06:23.358</Modified>
+      <Modified>2021-05-18T22:15:05.502</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\PageConfig.xbf">
-      <PackagePath>PageConfig.xbf</PackagePath>
-      <Modified>2021-05-13T00:06:23.358</Modified>
+    <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\PageConfig\PageConfig.xbf">
+      <PackagePath>PageConfig\PageConfig.xbf</PackagePath>
+      <Modified>2021-05-18T22:15:05.502</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -126,11 +126,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-12T09:39:44.006</Modified>
+      <Modified>2021-05-18T21:43:31.887</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\repos\AppApiMc\AppApiMc\AppApiMc\bin\x86\Debug\Core\AppApiMc.exe">
       <PackagePath>AppApiMc.exe</PackagePath>
-      <Modified>2021-05-13T00:06:24.339</Modified>
+      <Modified>2021-05-18T22:15:07.209</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

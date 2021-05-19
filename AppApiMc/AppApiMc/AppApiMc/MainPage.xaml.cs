@@ -33,7 +33,48 @@ namespace AppApiMc
 
         private void ConfigClick(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(PageConfig));
+            this.Frame.Navigate(typeof(PageConfig));
+            
+        }
+
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            if (!viewModel.CheckConfig())
+            {
+                DisplayNoConfigDialogAsync();
+                return;
+            }
+
+            if (!viewModel.CheckInfo())
+            {
+                DisplayNoInformationDialogAsync();
+                return;
+            }
+
+            viewModel.startGetInfo( ProgressBar)
+        }
+
+        private async void DisplayNoConfigDialogAsync()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No information",
+                Content = "Please go to config and write info",
+                CloseButtonText = "Ok"
+
+            };
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
+        }
+        private async void DisplayNoInformationDialogAsync()
+        {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                Title = "No information",
+                Content = "Please write info",
+                CloseButtonText = "Ok"
+                // do some body intersting
+            };
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
     }
 }

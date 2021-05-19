@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
+using Windows.Storage;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Windows.Storage.AccessCache;
 
 namespace AppApiMc
 {
@@ -25,6 +26,7 @@ namespace AppApiMc
                 config = value;
                 OnPropertyCahnged("Config");
             }
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,23 +36,44 @@ namespace AppApiMc
         }
         public void SaveConfig()
         {
-            workWithSettings.SaveSettings(config);
+            workWithSettings.SaveSettingsLocalFolder(config);
         }
 
-        public  ConfigViewModel()
+        public ConfigViewModel()
         {
             workWithSettings = new WorkWithSettings();
+            ReadCOnfigAsync();
+          
 
-            Config = workWithSettings.LoadSettings().Result;
+
+            //if(StorageApplicationPermissions.FutureAccessList.ContainsItem(config.PathToJsonId))
+            //Try(config.PathToJsonId);
+
+
         }
-        public bool CheckJson()
+        public async void ReadCOnfigAsync()
         {
-            return config.CheckPathToJson();
+            Config = await workWithSettings.LoadSettings();
         }
-        public bool CheckLoad()
+
+        public void UpdatePathToJson(StorageFile file)
         {
-            return config.CheckPathDownload();
+            config.PathToJson = file.Path;
+            config.PathToJsonId = StorageApplicationPermissions.FutureAccessList.Add(file);
         }
+        public void UpdatePathToLoad(StorageFolder folder)
+        {
+            config.PathToLoad = folder.Path;
+            config.PathToLoadId = StorageApplicationPermissions.FutureAccessList.Add(folder);
+        }
+
+        //private async void Try(string tk)
+        //{
+        //    var file = await StorageApplicationPermissions.FutureAccessList.GetFolderAsync(tk);
+        //    StorageFile fileNew =  await file.CreateFileAsync("ter.txt", CreationCollisionOption.ReplaceExisting);
+
+
+        //}
         //private itemConfig JsonDeserialize()
         //{
         //    string jsonString = File.ReadAllText(@"Config\Setings.json");

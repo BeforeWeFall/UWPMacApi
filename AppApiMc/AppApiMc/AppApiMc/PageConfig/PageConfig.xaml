@@ -9,7 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
         <ScrollViewer FontSize="30* " Margin="10" ViewChanged="ScrollViewer_ViewChanged">
             <StackPanel DataContext="{Binding Config}">
@@ -30,7 +33,9 @@
         </ScrollViewer>
 
         <Button x:Name="Button" Width="228" Height="67" Background="Azure" Click="Append" Content="Применить" FontSize="30" Margin="15,435,0,0" VerticalAlignment="Top" />
-        <Button x:Name="Back" Width="228" Height="67" Background="Azure"  Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="278,435,0,0" Click="Back_Click"/>
-        <Button x:Name="Back2" Width="228" Height="67" Background="Azure"  Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="567,435,0,0" Click="Back2_Click"/>
+        <Button  Width="180" Height="50" Background="Azure" Click="Back_Click" Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="10" />
+
+        <Button Width="150" Height="30" Background="Gray" Click="File_Click" Grid.Column="1"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,104,0,0"/>
+        <Button Width="150" Height="30" Background="Gray" Click="Folder_Click" Grid.Column="1"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,175,0,0"/>
     </Grid>
 </Page>

@@ -29,13 +29,36 @@ namespace AppApiMc.Config
             try
             {
                 StorageFile file = await storageFolder.GetFileAsync(fileName);
-                var stream = await file.OpenStreamForReadAsync();
-                string jsonString;
-                using (StreamReader stReader = new StreamReader(stream))
+                //StorageFile file= await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdata:///local/file.txt"));
+                // var stream = await file.OpenStreamForReadAsync();
+                using (var stream = await file.OpenSequentialReadAsync())
                 {
-                    jsonString = stReader.ReadToEnd();
+                    string jsonString;
+                    using (StreamReader stReader = new StreamReader(stream.AsStreamForRead()))
+                    {
+                        jsonString = stReader.ReadToEnd();
+                    }
+                    json = JsonSerializer.Deserialize<Setings>(jsonString);
                 }
-                json = JsonSerializer.Deserialize<Setings>(jsonString);
+
+                //string jsonString;
+                //StorageFile sampleFile =
+                //    await storageFolder.GetFileAsync(fileName);
+                //string jsonStringT = await FileIO.ReadTextAsync(sampleFile);
+
+
+                ////var stream = await sampleFile.OpenAsync(FileAccessMode.Read);
+                ////ulong size = stream.Size;
+                ////using (var inputStream = stream.GetInputStreamAt(0))
+                ////{
+                ////    using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
+                ////    {
+                ////        uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
+                ////        jsonString = dataReader.ReadString(numBytesLoaded);
+                ////    }
+                ////}
+                //json = JsonSerializer.Deserialize<Setings>(jsonStringT);
+
             }
             catch (FileNotFoundException e)
             {
@@ -63,6 +86,7 @@ namespace AppApiMc.Config
                 };
                 await JsonSerializer.SerializeAsync(stream, h, options);               
             }
+           
         }        
     }
 }

@@ -119,7 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigViewModel.cs" />
+    <Compile Include="PageConfig\ConfigViewModel.cs" />
     <Compile Include="Config\Setings.cs" />
     <Compile Include="Config\WorkWithSettings.cs" />
     <Compile Include="JsonClasses\Catalog.cs" />
@@ -133,7 +133,7 @@
     </Compile>
     <Compile Include="MainPageModel.cs" />
     <Compile Include="MainPageViewModel.cs" />
-    <Compile Include="PageConfig.xaml.cs">
+    <Compile Include="PageConfig\PageConfig.xaml.cs">
       <DependentUpon>PageConfig.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,7 +163,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageConfig.xaml">
+    <Page Include="PageConfig\PageConfig.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

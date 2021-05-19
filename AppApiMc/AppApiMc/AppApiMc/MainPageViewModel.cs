@@ -6,19 +6,21 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace AppApiMc
 {
     class MainPageViewModel : INotifyPropertyChanged
     {
         private Setings setings;
-
-        public Setings Setings
+        private WorkWithSettings workWithSettings;
+        private MainPageModel mainPageModel;
+        public MainPageModel MainPageModel
         {
-            get => setings;
+            get => mainPageModel;
             set
             {
-                setings = value;
+                mainPageModel = value;
                 OnPropertyCahnged("Config");
 
             }
@@ -33,9 +35,28 @@ namespace AppApiMc
 
         public MainPageViewModel()
         {
-            WorkWithSettings workWithSettings = new WorkWithSettings();
+            mainPageModel = new MainPageModel();
+            workWithSettings = new WorkWithSettings();
+            mainPageModel = new MainPageModel();
+            ReadConfigAsync();
+            
+        }
+        private async void ReadConfigAsync()
+        {
+            setings = await workWithSettings.LoadSettings();
+        }
+        public bool CheckConfig()
+        {
+            return mainPageModel.CheckSettings(setings);
+        }
+        public bool CheckInfo()
+        {
+            return mainPageModel.CheckInfo();
+        }
+        
+        public void startGetInfo(ProgressBar progressBar)
+        {
 
-            Setings = workWithSettings.LoadSettings().Result;
         }
 
     }
