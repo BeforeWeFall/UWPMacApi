@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" IgnorableNamespaces="uap mp uap4 iot build" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build">
+  <!--
+    ЭТОТ ФАЙЛ МАНИФЕСТА ПАКЕТА СОЗДАН ПРОЦЕССОМ СБОРКИ.
+
+    Изменения этого файла будут потеряны при его повторном создании. Чтобы исправить ошибки в этом файле, измените исходный файл .appxmanifest.
+
+ Дополнительные сведения о файлах манифестов приложений см. по адресу http://go.microsoft.com/fwlink/?LinkID=241727
+  -->
+  <Identity Name="2dea31b9-0061-4e56-b747-236bc49234de" Publisher="CN=ULBelykh" Version="1.0.0.0" ProcessorArchitecture="arm64" />
+  <mp:PhoneIdentity PhoneProductId="2dea31b9-0061-4e56-b747-236bc49234de" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>AppApiMc</DisplayName>
+    <PublisherDisplayName>ULBelykh</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.18362.0" />
+    <PackageDependency Name="Microsoft.NET.Native.Framework.Debug.2.2" MinVersion="2.2.27912.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.Native.Runtime.2.2" MinVersion="2.2.28604.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="RU-RU" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="AppApiMc.exe" EntryPoint="AppApiMc.App">
+      <uap:VisualElements DisplayName="AppApiMc" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="AppApiMc" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.fileSavePicker">
+          <uap:FileSavePicker>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.json</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileSavePicker>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileOpenPicker">
+          <uap:FileOpenPicker>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.json</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileOpenPicker>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap4:Capability Name="userDataTasks" />
+    <iot:Capability Name="systemManagement" />
+    <DeviceCapability Name="lowLevel" />
+  </Capabilities>
+  <build:Metadata>
+    <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
+    <build:Item Name="VisualStudio" Version="16.0" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2019" />
+    <build:Item Name="OperatingSystem" Version="10.0.18362.1550 (WinBuild.160101.0800)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="16.0.30521.138" />
+    <build:Item Name="ProjectGUID" Value="{0120B2DC-EA9D-418D-9A61-6D1B5B6798C8}" />
+    <build:Item Name="ilc.exe" Version="2.2.28605.00 built by: PROJECTNREL" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="10.0.18362.1" />
+    <build:Item Name="OptimizingToolset" Value="ilc.exe" />
+    <build:Item Name="UseDotNetNativeSharedAssemblyFrameworkPackage" Value="True" />
+    <build:Item Name="DisableStackTraceMetadata" Value="false" />
+    <build:Item Name="DisableExceptionMessages" Value="false" />
+    <build:Item Name="ShortcutGenericAnalysis" Value="false" />
+    <build:Item Name="GeneratePGD" Value="false" />
+    <build:Item Name="ConsumePGD" Value="false" />
+    <build:Item Name="SingleThreadNUTC" Value="false" />
+    <build:Item Name="Use64BitCompiler" Value="false" />
+    <build:Item Name="OptimizeForSize" Value="false" />
+    <build:Item Name="AlignMethodsAtMinimalBoundaries" Value="false" />
+    <build:Item Name="LargeAddressAware" Value="false" />
+    <build:Item Name="MakePri.exe" Version="10.0.18362.1 (WinBuild.160101.0800)" />
+  </build:Metadata>
+</Package>

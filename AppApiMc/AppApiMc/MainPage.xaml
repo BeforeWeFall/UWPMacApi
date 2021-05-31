@@ -1,6 +1,5 @@
 ﻿<Page
     x:Class="AppApiMc.MainPage"
-    
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AppApiMc"
@@ -8,9 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+    <Page.Resources>
+        <Style x:Name="BasicStyle" x:Key="BasicStyle" TargetType="TextBox"> <!--перенести большую часть настроек сюды-->
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style x:Name="ErrorStyle" x:Key="ErrorStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="Red"></Setter>
+        </Style>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding }">
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding MainPageModel}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition  />
             <ColumnDefinition />
@@ -25,14 +32,15 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
+
         <Viewbox HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">
             <TextBlock Text="Воруй собирай" FontSize="50" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center"/>
         </Viewbox>
+        
         <Viewbox Grid.Row="1"  Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Пожалуйста введите данные" FontSize="50"  />
         </Viewbox>
-        
+
         <Viewbox  Grid.Row="2"  Grid.ColumnSpan="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Введите город" FontSize="40" />
         </Viewbox>
@@ -44,21 +52,21 @@
         </Viewbox>
 
         <Viewbox Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" >
-            <TextBox Text="{Binding City, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="30"  Margin="10" Foreground="Gray" />
+            <TextBox x:Name="City" Text="{Binding City, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="30"  Margin="10" Foreground="Gray" Style="{StaticResource BasicStyle}" />
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="1" >
-            <TextBox Text="id города" FontSize="30"   Foreground="Gray" Margin="10"/>
+            <TextBox x:Name="CityId" Text="{Binding IdCity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Foreground="Gray" Margin="10"/>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" >
-            <TextBox Text="GMT" FontSize="30"  Margin="10" Foreground="Gray" />
+            <TextBox x:Name="TimeZone" Text="{Binding TimeZone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="10"  />
         </Viewbox>
 
-        <ProgressBar Grid.Row="4" Grid.ColumnSpan="3" Value="0" Height="40" Margin="10" Background="Black"/>
+        <ProgressBar x:Name="ProgressBar" Grid.Row="4" Grid.ColumnSpan="3" Value="{Binding pr, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="40" Margin="10" Background="Black" ValueChanged="ProgressBar_ValueChanged" Maximum="100" />
 
         <ScrollViewer Grid.Row="5" Grid.ColumnSpan="3" Background="Gray" Margin="10">
-            <TextBlock FontSize="30" Text="a\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa п" TextWrapping="Wrap"/>
+            <TextBlock x:Name="TextBox" FontSize="30" Text="" TextWrapping="Wrap"/>
         </ScrollViewer>
-        
-        <ToggleButton  Content="Запустить" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" Height="62" Width="113" />
+        <Button x:Name="Configure" Content="Настройки" Grid.Column="2" HorizontalAlignment="Right"  Height="62" Width="113" Click="ConfigClick"/>
+        <Button x:Name="Start" Content="Запустить" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" Height="62" Width="113" Click="Start_Click"/>
     </Grid>
 </Page>

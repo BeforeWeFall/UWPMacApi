@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="AppApiMc.PageConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppApiMc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer x:ConnectionId='2' FontSize="30* " Margin="10"                                       >
+            <StackPanel DataContext="{Binding Config}">
+                <TextBlock Text="Configuration" HorizontalAlignment="Center" FontSize="40*"/>
+                <TextBlock Text="Path to json"  />
+
+                <TextBox x:ConnectionId='7' x:Name="PathJson" Text="{Binding PathToJson, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" ToolTipService.ToolTip="Выберете папку где лежить json запросов"/>
+                <TextBlock Text="Path to load" />
+                <TextBox x:ConnectionId='8' x:Name="PathLoad" Text="{Binding PathToLoad, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" ToolTipService.ToolTip="Выберете папку куда сохранится результат работы"/>
+                <TextBlock Text="Proxy" />
+                <TextBox Text="{Binding Proxy, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" ToolTipService.ToolTip="Если вы хотите использовать прокси введите его в формате xxx.xx...:yy..."/>
+                <TextBlock Text="Login" />
+                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" ToolTipService.ToolTip="Укажите логин к прокси"/>
+                <TextBlock Text="Password" />
+                <TextBox  Text="{Binding Password, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" ToolTipService.ToolTip="Укажите пароль к прокси" /><!--passwordbox-->
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button x:ConnectionId='3' x:Name="Button" Width="228" Height="67" Background="Azure"                Content="Применить" FontSize="30" Margin="15,435,0,0" VerticalAlignment="Top" />
+        <Button x:ConnectionId='4'  Width="180" Height="50" Background="Azure"                    Content="Назад" FontSize="30"  VerticalAlignment="Top" Margin="10" />
+
+        <Button x:ConnectionId='5' Width="150" Height="30" Background="Gray"                    Grid.Column="1"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,104,0,0"/>
+        <Button x:ConnectionId='6' Width="150" Height="30" Background="Gray"                      Grid.Column="1"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,175,0,0"/>
+    </Grid>
+</Page>
+

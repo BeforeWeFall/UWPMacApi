@@ -1,10 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text.Json;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -30,13 +28,10 @@ namespace AppApiMc
         /// </summary>
         public App()
         {
-            
-            //itemConfig configuration = JsonDeserialize();
-            
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
-        
+
         /// <summary>
         /// Вызывается при обычном запуске приложения пользователем. Будут использоваться другие точки входа,
         /// например, если приложение запускается для открытия конкретного файла.

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ULBelykh\\source\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj": {}
+    "D:\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ULBelykh\\source\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj": {
+    "D:\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ULBelykh\\source\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj",
+        "projectUniqueName": "D:\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj",
         "projectName": "AppApiMc",
-        "projectPath": "C:\\Users\\ULBelykh\\source\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj",
+        "projectPath": "D:\\repos\\AppApiMc\\AppApiMc\\AppApiMc.csproj",
         "packagesPath": "C:\\Users\\ULBelykh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ULBelykh\\source\\repos\\AppApiMc\\AppApiMc\\obj\\",
+        "outputPath": "D:\\repos\\AppApiMc\\AppApiMc\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -45,14 +45,6 @@
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.2.10, )"
-            },
-            "NLog.Extensions.Logging": {
-              "target": "Package",
-              "version": "[1.7.2, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
             },
             "System.Text.Json": {
               "target": "Package",

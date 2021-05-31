@@ -1,0 +1,22 @@
+LIBRARY kernel32.dll
+EXPORTS
+   FormatMessageW
+   GetConsoleMode
+   GetCPInfoExW
+   WideCharToMultiByte
+
+   WriteConsoleW
+   GetConsoleOutputCP
+   GetFileType
+   LocalFree
+   GetConsoleCP
+
+   ReadFile
+   LocalAlloc
+   WriteFile
+   GetStdHandle
+
+
+   MultiByteToWideChar
+
+   ReadConsoleW

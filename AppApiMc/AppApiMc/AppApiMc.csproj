@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{77DE8EC7-856E-4F27-BAE9-8D192E9F55BF}</ProjectGuid>
+    <ProjectGuid>{0120B2DC-EA9D-418D-9A61-6D1B5B6798C8}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AppApiMc</RootNamespace>
@@ -119,21 +119,26 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigViewModel.cs" />
-    <Compile Include="itemConfig.cs" />
+    <Compile Include="enumReq.cs" />
+    <Compile Include="PageConfig\ConfigViewModel.cs" />
+    <Compile Include="Config\Setings.cs" />
+    <Compile Include="Config\WorkWithSettings.cs" />
     <Compile Include="JsonClasses\Catalog.cs" />
     <Compile Include="JsonClasses\CityInfo.cs" />
     <Compile Include="JsonClasses\JsonInfo.cs" />
     <Compile Include="JsonClasses\PricesInRestoran.cs" />
     <Compile Include="JsonClasses\Products.cs" />
     <Compile Include="JsonClasses\ReustoranInfo.cs" />
-    <Compile Include="PageConfig.xaml.cs">
-      <DependentUpon>PageConfig.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainPageModel.cs" />
+    <Compile Include="MainPageViewModel.cs" />
+    <Compile Include="PageConfig\PageConfig.xaml.cs">
+      <DependentUpon>PageConfig.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -155,24 +160,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="PageConfig.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageConfig\PageConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="NLog.Extensions.Logging">
-      <Version>1.7.2</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Json">
       <Version>5.0.2</Version>

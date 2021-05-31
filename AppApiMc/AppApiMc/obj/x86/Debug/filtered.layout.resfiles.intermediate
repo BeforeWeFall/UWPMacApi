@@ -8,6 +8,6 @@ Assets\Wide310x150Logo.scale-200.png
 App.xbf
 AppApiMc.xr.xml
 MainPage.xbf
-PageConfig.xbf
+PageConfig\PageConfig.xbf
 Properties\Default.rd.xml
 WinMetadata\Windows.winmd

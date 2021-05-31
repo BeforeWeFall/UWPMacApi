@@ -1,1 +1,1 @@
-C:\Users\ULBelykh\source\repos\AppApiMc\AppApiMc\AppApiMc.csproj;x86
+D:\repos\AppApiMc\AppApiMc\AppApiMc\AppApiMc.csproj;x86
